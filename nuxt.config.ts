@@ -1,4 +1,6 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+const configuration: NuxtConfig = {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
@@ -40,8 +42,27 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // https://firebase.nuxtjs.org/
+    '@nuxtjs/firebase'
   ],
+
+  // Firebase Configuration
+  firebase: {
+    config: {
+      apiKey: '<apiKey>',
+      authDomain: '<authDomain>',
+      databaseURL: '<databaseURL>',
+      projectId: '<projectId>',
+      storageBucket: '<storageBucket>',
+      messagingSenderId: '<messagingSenderId>',
+      appId: '<appId>',
+      measurementId: '<measurementId>'
+    },
+    services: {
+      auth: true
+    }
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
@@ -49,3 +70,5 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 }
+
+export default configuration
