@@ -50,17 +50,19 @@ const configuration: NuxtConfig = {
   // Firebase Configuration
   firebase: {
     config: {
-      apiKey: '<apiKey>',
-      authDomain: '<authDomain>',
-      databaseURL: '<databaseURL>',
-      projectId: '<projectId>',
-      storageBucket: '<storageBucket>',
-      messagingSenderId: '<messagingSenderId>',
-      appId: '<appId>',
-      measurementId: '<measurementId>'
+      apiKey: 'AIzaSyDwMijHRGOfnPQ7ME8D192EpqzeBXlty-0',
+      authDomain: 'research-helper-app.firebaseapp.com',
+      databaseURL: 'https://research-helper-app.firebaseio.com',
+      projectId: 'research-helper-app',
+      storageBucket: 'research-helper-app.appspot.com',
+      messagingSenderId: '293593523120',
+      appId: '1:293593523120:web:e7f80abde82b8f54af6c75',
+      measurementId: 'G-GPV0H8CHJK'
     },
     services: {
-      auth: true
+      auth: true,
+      firestore: true,
+      storage: true
     }
   },
 
