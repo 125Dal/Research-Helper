@@ -1,4 +1,47 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+type firebaseConfiguration = {
+  apiKey: string
+  authDomain: string
+  databaseURL: string
+  projectId: string
+  storageBucket: string
+  messagingSenderId: string
+  appId: string
+  measurementId: string
+}
+
+type firebaseServices = {
+  auth: boolean
+  firestore: boolean
+  functions: boolean
+  storage: boolean
+  database: boolean
+  messaging: boolean
+  performance: boolean
+  analytics: boolean
+  remoteConfig: boolean
+}
+
+type Configuration = NuxtConfig & {
+  firebase: {
+    config: Partial<firebaseConfiguration>
+    services: Partial<firebaseServices>
+  }
+}
+
+const {
+  apiKey,
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
+  measurementId
+} = process.env
+
+const configuration: Configuration = {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
@@ -40,8 +83,29 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // https://firebase.nuxtjs.org/
+    '@nuxtjs/firebase'
   ],
+
+  // Firebase Configuration
+  firebase: {
+    config: {
+      apiKey,
+      authDomain,
+      databaseURL,
+      projectId,
+      storageBucket,
+      messagingSenderId,
+      appId,
+      measurementId
+    },
+    services: {
+      auth: true,
+      firestore: true,
+      storage: true
+    }
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
@@ -49,3 +113,5 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 }
+
+export default configuration
