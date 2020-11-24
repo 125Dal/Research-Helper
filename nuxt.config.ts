@@ -1,6 +1,47 @@
 import { NuxtConfig } from '@nuxt/types'
 
-const configuration: NuxtConfig = {
+type firebaseConfiguration = {
+  apiKey: string
+  authDomain: string
+  databaseURL: string
+  projectId: string
+  storageBucket: string
+  messagingSenderId: string
+  appId: string
+  measurementId: string
+}
+
+type firebaseServices = {
+  auth: boolean
+  firestore: boolean
+  functions: boolean
+  storage: boolean
+  database: boolean
+  messaging: boolean
+  performance: boolean
+  analytics: boolean
+  remoteConfig: boolean
+}
+
+type Configuration = NuxtConfig & {
+  firebase: {
+    config: Partial<firebaseConfiguration>
+    services: Partial<firebaseServices>
+  }
+}
+
+const {
+  apiKey,
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
+  measurementId
+} = process.env
+
+const configuration: Configuration = {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
@@ -50,14 +91,14 @@ const configuration: NuxtConfig = {
   // Firebase Configuration
   firebase: {
     config: {
-      apiKey: 'AIzaSyDwMijHRGOfnPQ7ME8D192EpqzeBXlty-0',
-      authDomain: 'research-helper-app.firebaseapp.com',
-      databaseURL: 'https://research-helper-app.firebaseio.com',
-      projectId: 'research-helper-app',
-      storageBucket: 'research-helper-app.appspot.com',
-      messagingSenderId: '293593523120',
-      appId: '1:293593523120:web:e7f80abde82b8f54af6c75',
-      measurementId: 'G-GPV0H8CHJK'
+      apiKey,
+      authDomain,
+      databaseURL,
+      projectId,
+      storageBucket,
+      messagingSenderId,
+      appId,
+      measurementId
     },
     services: {
       auth: true,
