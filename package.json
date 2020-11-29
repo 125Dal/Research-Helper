@@ -13,13 +13,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/composition-api": "^0.16.4",
     "@nuxtjs/firebase": "^7.1.1",
     "core-js": "^3.6.5",
     "firebase": "^8.1.1",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
