@@ -23,11 +23,19 @@ type firebaseServices = {
   remoteConfig: boolean
 }
 
+type fontawesomeConfiguration = {
+  imports: {
+    set: string
+    icons: string[]
+  }[]
+}
+
 type Configuration = NuxtConfig & {
   firebase: {
     config: Partial<firebaseConfiguration>
     services: Partial<firebaseServices>
   }
+  fontawesome: fontawesomeConfiguration
 }
 
 const {
@@ -85,7 +93,9 @@ const configuration: Configuration = {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://firebase.nuxtjs.org/
-    '@nuxtjs/firebase'
+    '@nuxtjs/firebase',
+    // https://www.npmjs.com/package/nuxt-fontawesome
+    'nuxt-fontawesome'
   ],
 
   // Firebase Configuration
@@ -105,6 +115,15 @@ const configuration: Configuration = {
       firestore: true,
       storage: true
     }
+  },
+
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
