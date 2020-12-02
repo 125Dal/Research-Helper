@@ -1,7 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import { PropOptions } from 'vue/types/options'
+import { PropOptions, RecordPropsDefinition } from 'vue/types/options'
 import TheButton from '@/components/TheButton.vue'
 import { localVue, getTestId } from './setup'
+import { Props } from '~/types/components/TheButton'
 
 describe('TheButton Component', () => {
   const modifiers = ['primary', 'secondary', 'twitter']
@@ -32,7 +33,7 @@ describe('TheButton Component', () => {
       const component = shallowMount(TheButton, {
         propsData: {
           text: '',
-          modifier: [modifier]
+          modifiers: [modifier]
         }
       })
       const target = component.find(getTestId('Button'))
@@ -41,10 +42,9 @@ describe('TheButton Component', () => {
   })
 
   test('特定のProp以外を渡すとエラーを吐く', () => {
-    const component = shallowMount(TheButton, {
-      propsData: { text: '' }
-    })
-    const { validator } = component.props().modifiers as PropOptions
+    const { validator } = (TheButton.props as RecordPropsDefinition<Props>)!
+      .modifiers as PropOptions
+
     expect(validator).toBeTruthy()
     expect(validator!(modifiers[0])).toBe(true)
     expect(validator!('invalid')).toBe(false)
@@ -55,6 +55,6 @@ describe('TheButton Component', () => {
       propsData: { text: '' }
     })
     component.trigger('click')
-    expect(component.emitted('clicked')).toBe(true)
+    expect(component.emitted('clicked')).not.toBeUndefined()
   })
 })
