@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import { DirectiveOptions } from 'vue/types'
 
 export const directive: DirectiveOptions = {
@@ -6,3 +7,5 @@ export const directive: DirectiveOptions = {
     isDev && binding.value && el.setAttribute('data-testid', binding.value)
   }
 }
+
+Vue.directive('testId', directive)

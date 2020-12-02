@@ -14,6 +14,8 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    indent: [2, 2]
+    indent: [2, 2],
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': [0]
   }
 }

@@ -1,7 +1,9 @@
 import { createLocalVue } from '@vue/test-utils'
 import { directive } from '~/plugins/directive/testid'
 
-const Vue = createLocalVue()
-Vue.directive('test', directive)
+const localVue = createLocalVue()
+localVue.directive('test', directive)
 
-export default Vue
+const getTestId = (testId: string) => `[data-testId=${testId}]`
+
+export { localVue, getTestId }
