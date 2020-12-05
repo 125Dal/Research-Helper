@@ -15,5 +15,8 @@ module.exports = {
       secondary: '#7393a7',
       twitter: '#1da1f2'
     })
+  },
+  variants: {
+    margin: ['last']
   }
 }
