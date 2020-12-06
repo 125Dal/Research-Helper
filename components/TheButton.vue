@@ -1,7 +1,7 @@
 <template>
   <button
     data-testId="Button"
-    class="border rounded-md"
+    class="w-full h-full border rounded-2xl"
     :class="classes"
     @click="clicked"
   >
