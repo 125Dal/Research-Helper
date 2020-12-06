@@ -1,5 +1,8 @@
 <template>
-  <input :value="value" class="border border-gray-500 px-3 py-3" />
+  <input
+    :value="value"
+    class="w-full h-full border border-gray-500 px-3 py-3"
+  />
 </template>
 
 <script lang="ts">
