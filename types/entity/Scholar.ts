@@ -1,5 +1,9 @@
 export type Scholar = {
   /**
+   * UUID
+   */
+  id: string
+  /**
    * タイトル
    */
   title: string

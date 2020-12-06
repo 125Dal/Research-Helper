@@ -1,5 +1,5 @@
 <template>
-  <ul class="px-8 py-6 text-3xl" data-testId="TagList">
+  <ul class="text-3xl" data-testId="TagList">
     <tag-item
       v-for="tag in tags"
       :key="tag.name"
