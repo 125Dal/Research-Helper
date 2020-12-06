@@ -6,6 +6,7 @@ import { Scholar } from '~/types/entity/Scholar'
 
 const propsData: Props = {
   scholar: {
+    id: '',
     title: 'Scholar Title',
     author: '',
     journal: '',
