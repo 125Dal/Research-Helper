@@ -1,16 +1,19 @@
 module.exports = {
   theme: {
-    backgroundColor: (_theme) => ({
+    backgroundColor: (theme) => ({
+      ...theme('colors'),
       primary: '#7393a7',
       secondary: '#fff',
       twitter: '#1da1f2'
     }),
-    textColor: (_theme) => ({
+    textColor: (theme) => ({
+      ...theme('colors'),
       primary: '#fff',
       secondary: '#7393a7',
       twitter: '#fff'
     }),
-    borderColor: (_theme) => ({
+    borderColor: (theme) => ({
+      ...theme('colors'),
       primary: '#7393a7',
       secondary: '#7393a7',
       twitter: '#1da1f2'
