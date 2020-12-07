@@ -17,7 +17,10 @@ module.exports = {
       primary: '#7393a7',
       secondary: '#7393a7',
       twitter: '#1da1f2'
-    })
+    }),
+    container: {
+      center: true
+    }
   },
   variants: {
     margin: ['last']

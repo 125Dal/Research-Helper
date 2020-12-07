@@ -1,4 +1,5 @@
 export type readScholarSummaryResponse = {
+  id: string
   title: string
   author: string[]
   journal: string

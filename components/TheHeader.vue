@@ -1,5 +1,5 @@
 <template>
-  <header class="h-48 shadow-lg">
+  <header class="h-32 shadow-lg">
     <div
       class="flex justify-between items-center h-full mx-auto md:max-w-screen-md"
     >
