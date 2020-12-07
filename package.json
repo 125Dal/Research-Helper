@@ -19,7 +19,7 @@
     "@nuxtjs/composition-api": "^0.16.4",
     "@nuxtjs/firebase": "^7.1.1",
     "core-js": "^3.8.0",
-    "firebase": "^8.1.1",
+    "firebase": "^8.1.2",
     "nuxt": "^2.14.9",
     "nuxt-fontawesome": "^0.4.0"
   },
