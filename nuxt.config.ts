@@ -1,55 +1,6 @@
 import { NuxtConfig } from '@nuxt/types'
 
-type firebaseConfiguration = {
-  apiKey: string
-  authDomain: string
-  databaseURL: string
-  projectId: string
-  storageBucket: string
-  messagingSenderId: string
-  appId: string
-  measurementId: string
-}
-
-type firebaseServices = {
-  auth: boolean
-  firestore: boolean
-  functions: boolean
-  storage: boolean
-  database: boolean
-  messaging: boolean
-  performance: boolean
-  analytics: boolean
-  remoteConfig: boolean
-}
-
-type fontawesomeConfiguration = {
-  imports: {
-    set: string
-    icons: string[]
-  }[]
-}
-
-type Configuration = NuxtConfig & {
-  firebase: {
-    config: Partial<firebaseConfiguration>
-    services: Partial<firebaseServices>
-  }
-  fontawesome: fontawesomeConfiguration
-}
-
-const {
-  apiKey,
-  authDomain,
-  databaseURL,
-  projectId,
-  storageBucket,
-  messagingSenderId,
-  appId,
-  measurementId
-} = process.env
-
-const configuration: Configuration = {
+const configuration: NuxtConfig = {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
@@ -85,7 +36,8 @@ const configuration: Configuration = {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://composition-api.nuxtjs.org/
-    '@nuxtjs/composition-api'
+    '@nuxtjs/composition-api',
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -93,37 +45,26 @@ const configuration: Configuration = {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://firebase.nuxtjs.org/
-    '@nuxtjs/firebase',
-    // https://www.npmjs.com/package/nuxt-fontawesome
-    'nuxt-fontawesome'
+    '@nuxtjs/firebase'
   ],
 
   // Firebase Configuration
   firebase: {
     config: {
-      apiKey,
-      authDomain,
-      databaseURL,
-      projectId,
-      storageBucket,
-      messagingSenderId,
-      appId,
-      measurementId
+      apiKey: process.env.API_KEY!,
+      authDomain: process.env.AUTH_DOMAIN!,
+      databaseURL: process.env.DATABASE_URL!,
+      projectId: process.env.PROJECT_ID!,
+      storageBucket: process.env.STORAGE_BUCKET!,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID!,
+      appId: process.env.APP_ID!,
+      measurementId: process.env.MEASUREMENT_ID!
     },
     services: {
       auth: true,
       firestore: true,
       storage: true
     }
-  },
-
-  fontawesome: {
-    imports: [
-      {
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      }
-    ]
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
