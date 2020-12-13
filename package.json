@@ -20,7 +20,7 @@
     "@nuxtjs/firebase": "^7.1.1",
     "core-js": "^3.8.1",
     "firebase": "^8.1.2",
-    "nuxt": "^2.14.9",
+    "nuxt": "^2.14.11",
     "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
