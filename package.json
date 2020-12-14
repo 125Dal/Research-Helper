@@ -19,7 +19,7 @@
     "@nuxtjs/composition-api": "^0.16.4",
     "@nuxtjs/firebase": "^7.1.1",
     "core-js": "^3.8.1",
-    "firebase": "^8.1.2",
+    "firebase": "^8.2.0",
     "nuxt": "^2.14.11"
   },
   "devDependencies": {
