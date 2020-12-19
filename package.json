@@ -17,7 +17,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/composition-api": "^0.16.4",
-    "@nuxtjs/firebase": "^7.1.1",
+    "@nuxtjs/firebase": "^7.1.2",
     "core-js": "^3.8.1",
     "firebase": "^8.1.2",
     "nuxt": "^2.14.11"
