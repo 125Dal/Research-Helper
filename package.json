@@ -17,7 +17,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/composition-api": "^0.17.0",
-    "@nuxtjs/firebase": "^7.2.2",
+    "@nuxtjs/firebase": "^7.3.0",
     "core-js": "^3.8.1",
     "firebase": "^8.2.1",
     "nuxt": "^2.14.12"
@@ -50,7 +50,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.18.0",
-    "ts-jest": "^26.4.1",
+    "ts-jest": "^26.5.0",
     "vue-jest": "^3.0.4"
   }
 }
