@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxt/typescript-runtime": "^2.0.2",
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/composition-api": "^0.17.0",
     "@nuxtjs/firebase": "^7.3.0",
