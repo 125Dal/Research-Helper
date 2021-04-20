@@ -18,7 +18,7 @@
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/composition-api": "^0.17.0",
     "@nuxtjs/firebase": "^7.3.0",
-    "core-js": "^3.8.1",
+    "core-js": "^3.10.2",
     "firebase": "^8.2.1",
     "nuxt": "^2.14.12"
   },
